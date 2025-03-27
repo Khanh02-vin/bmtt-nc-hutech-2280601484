@@ -1,0 +1,3 @@
+pycryptodome
+
+pip install -r .\requirements.txt 
