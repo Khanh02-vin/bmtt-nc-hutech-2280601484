@@ -1,0 +1,20 @@
+[ req ]
+default_bits        = 2048
+prompt              = no
+default_md          = sha256
+distinguished_name  = dn
+x509_extensions     = v3_ca   # Thêm phần mở rộng cho chứng chỉ x509 (tùy chọn)
+
+[ dn ]
+C   = US
+ST  = State
+L   = Location
+O   = Organization
+OU  = Organization Unit
+CN  = localhost
+
+[ v3_ca ]  # Nếu bạn muốn tạo chứng chỉ tự ký, thêm phần này
+basicConstraints = critical,CA:TRUE
+keyUsage = critical, digitalSignature, keyEncipherment
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer:always
